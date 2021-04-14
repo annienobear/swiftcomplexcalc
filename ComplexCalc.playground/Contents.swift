@@ -70,7 +70,7 @@ class Calculator {
     func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
         var total = op(beg, args[0])
         for index in 0 ... (args.count - 2) {
-            total += op(args[index], args[index + 1])
+            total = op(total, args[index + 1])
         }
         return total
     }
